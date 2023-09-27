@@ -1,4 +1,11 @@
 <div class="header-container">
-  <h1>Todos</h1>
-  <input placeholder="what needs to be done?" autoFocus class="input-task"/>
+  <h1>todos</h1>
+  <input
+    placeholder="what needs to be done?"
+    autoFocus
+    class="input-task"
+    [(ngModel)] = "newTask"
+    (keyup.enter)="addTask()"
+    />
 </div>
++

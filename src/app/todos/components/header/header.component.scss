@@ -1,3 +1,28 @@
 .header-container{
-  font-family: 'Roboto1', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  h1{
+    font-size: 5rem;
+    color: rgba(125, 139, 136, 0.729);
+    font-weight: 100;
+    margin: 50px  0 10px 0;
+    padding: 0;
+  }
+  input{
+    font-family: 'Roboto', sans-serif;
+    width: 700px;
+    height: 2rem;
+    font-size: 1.5rem;
+    padding:  1rem;
+    outline: none;
+    border: none;
+    background-color: rgb(232, 232, 232);
+    &::placeholder{
+      font-style: italic;
+    }
+    &:hover{
+      background-color: rgb(243, 243, 243);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
 }
