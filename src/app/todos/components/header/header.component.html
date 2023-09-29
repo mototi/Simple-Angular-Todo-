@@ -6,5 +6,7 @@
     class="input-task"
     [(ngModel)] = "newTask"
     (keyup.enter)="addTask()"
+    [style.font-family]="fontFamily"
+    (input)="onInput($event)"
     />
 </div>

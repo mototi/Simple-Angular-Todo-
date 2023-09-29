@@ -3,6 +3,17 @@
   src: url('./fonts/Roboto/Roboto-Thin.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Cairo';
+  src: url('./fonts/Cairo/Cairo-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'tajawal';
+  src: url('./fonts/Tajawal/Tajawal-Light.ttf') format('truetype');
+}
+
+
 body{
   background-color: rgb(193, 209, 208);
 }
