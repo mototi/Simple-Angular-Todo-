@@ -1,0 +1,18 @@
+<section>
+
+  <input
+  type="checkbox"
+  id="sperate-btn"
+  class="sperate-btn"
+  *ngIf="(displayall | async) === true"
+  [(ngModel)] = "showList"/>
+
+  <label for="sperate-btn"></label>
+
+  <ul *ngIf="showList">
+    <app-single-task  *ngFor="let task of filteredTodos | async" [task]="task">
+    </app-single-task>
+  </ul>
+
+</section>
+

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodosService } from '../../services/todos.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,10 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   newTask: string = '';
 
+  constructor(private _todosService : TodosService) { }
+
   addTask() {
-    console.log(this.newTask);
+    this._todosService.addTask(this.newTask);
+    this.newTask = '';
   }
 }

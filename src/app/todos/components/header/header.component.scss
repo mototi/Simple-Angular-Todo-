@@ -9,11 +9,13 @@
     padding: 0;
   }
   input{
+    margin-bottom: 0;
     font-family: 'Roboto', sans-serif;
     width: 700px;
+    max-width: 700px;
     height: 2rem;
     font-size: 1.5rem;
-    padding:  1rem;
+    padding:  15px 15px 15px 50px;
     outline: none;
     border: none;
     background-color: rgb(232, 232, 232);
