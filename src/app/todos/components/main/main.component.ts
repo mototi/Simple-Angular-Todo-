@@ -4,7 +4,7 @@ import { Task } from 'src/app/model/tasks.model';
 import { TodosService } from '../../services/todos.service';
 import { FilterEnum } from 'src/app/model/filterEnum.model';
 import { combineLatest } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main',
@@ -40,5 +40,9 @@ export class MainComponent {
         }
       })
     );
+
+    this.filteredTodos.subscribe(() => {
+      this.showList = this._todosService.tasks.getValue().length > 0;
+    });
   }
 }

@@ -23,4 +23,5 @@ export class TodosService {
     const currentTasks = this.tasks.getValue();
     this.tasks.next([...currentTasks, task]);
   }
+
 }
