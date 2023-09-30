@@ -5,6 +5,12 @@
   width: 745px;
   position: relative;
 
+  &:hover{
+    .delete-btn{
+      display: block;
+    }
+  }
+
   .complited{
     cursor: pointer;
     appearance: none;
@@ -75,6 +81,7 @@
 
 
   .delete-btn{
+    display: none;
     border-radius: 50%;
     margin-right: 7px;
     background-color: transparent;
