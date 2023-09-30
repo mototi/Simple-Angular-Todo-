@@ -5,32 +5,27 @@ section{
   position: relative;
 
   .sperate-btn{
+    appearance: none;
     border: none;
-    opacity: 0;
-
-  }
-
-
-  .sperate-btn + label {
-    font-size: 0;
-    position: absolute;
-    top: -35px;
-    left: -5px;
-    transform: rotate(90deg);
+    background-color: transparent;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
+    position : absolute;
+    top: -45px;
+    left: 15px;
   }
 
-  .sperate-btn + label:before {
-    content: '❯';
-    font-size: 22px;
-    color: #abaaaa;
+  .sperate-btn::after{
+    content: "\f078";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 20px;
+    color: #7a7a7a;
   }
 
-  .sperate-btn:checked + label:before {
-    color: #515151;
+  .sperate-btn:focus::after {
+    color: #414141;
   }
+
 
   ul{
   margin-top: 0;

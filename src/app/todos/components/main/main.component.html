@@ -7,8 +7,6 @@
   *ngIf="(displayall | async) === true"
   [(ngModel)] = "showList"/>
 
-  <label for="sperate-btn"></label>
-
   <ul *ngIf="showList">
     <app-single-task  *ngFor="let task of filteredTodos | async" [task]="task">
     </app-single-task>

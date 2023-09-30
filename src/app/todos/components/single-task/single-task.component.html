@@ -1,10 +1,18 @@
-<li class="list-item">
-  <input type="checkbox" class="complited" />
-
+<li  class="list-item">
   <input
-    class="task"
-    value="{{task.text}}"
+  type="checkbox"
+  class="complited"
+  (change)="changeStatus()"
   />
 
-  <button><span>X</span></button>
+  <input
+    type="text"
+    class="task"
+    value="{{task.text}}"
+    (keyup.enter)="changeText($event);"
+  />
+
+  <button class="delete-btn" (click)="deleteTask()">
+    <span>X</span>
+  </button>
 </li>

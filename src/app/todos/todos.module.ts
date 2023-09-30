@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { TodosService } from './services/todos.service';
 import { MainComponent } from './components/main/main.component';
 import { SingleTaskComponent } from './components/single-task/single-task.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     HeaderComponent,
     TodosComponent,
     MainComponent,
-    SingleTaskComponent
+    SingleTaskComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
