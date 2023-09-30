@@ -20,9 +20,9 @@
     }
 
     .control{
-      span{
+      .sp{
         font-size: 14px;
-        margin: 0 5px 0 10px;
+        margin: 0 15px 0 10px;
         color: rgb(104, 104, 104);
         font-weight: 600;
       }
@@ -36,24 +36,19 @@
       }
     }
 
-    #show1{
-      border: 1px solid rgba(255, 0, 0, 0.29);
-      border-radius: 3px;
-      &:hover{
-        border: 1px solid red;
-        color: red;
-      }
-    }
-
     .show{
       button{
         margin: 0 5px;
-        border: 1px solid rgba(255, 0, 0, 0.0);
         &:hover{
-          border: 1px solid rgba(255, 0, 0, 0.159);
+          border: 1px solid rgba(255, 0, 0, 0.1);
           border-radius: 3px;
         }
       }
+    }
+
+    button.selected {
+      border: 1px solid rgba(255, 0, 0, 0.3);
+      border-radius: 3px;
     }
 
     .clear-all{

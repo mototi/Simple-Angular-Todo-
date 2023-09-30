@@ -46,4 +46,28 @@ export class TodosService {
     this.tasks.next(updatedTasks);
   }
 
+
+  filterTasks(str: string) {
+    switch (str) {
+      case 'All': { this.filter.next(FilterEnum.All); break; }
+      case 'Active': { this.filter.next(FilterEnum.Active); break; }
+      case 'Completed': { this.filter.next(FilterEnum.Completed); break; }
+      default: { this.filter.next(FilterEnum.All); break; }
+    }
+  }
+
+  clearComplete(){
+    const currentTasks = this.tasks.getValue();
+    const updatedTasks = currentTasks.filter(task => task.status !== true);
+    this.tasks.next(updatedTasks);
+  }
+
+  completeAll(){
+    const currentTasks = this.tasks.getValue();
+    currentTasks.forEach(task => {
+      task.status = true;
+    });
+    this.tasks.next(currentTasks);
+  }
+
 }

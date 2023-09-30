@@ -40,6 +40,10 @@
     content: "\f00c";
   }
 
+  .complited:checked{
+    border: .5px solid #07d629;
+  }
+
   .complited:checked::after{
     content: "\f00c";
     color: #07d629;

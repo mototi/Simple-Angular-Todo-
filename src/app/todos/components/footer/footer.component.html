@@ -1,17 +1,44 @@
-<div class="container">
+<div class="container" *ngIf="(noTodos | async)">
 
   <div class="control">
-    <span>0 items</span>
-    <button>Mark All</button>
+    <span class="sp">
+      <span>{{num}} </span>
+      <span>tasks</span>
+    </span>
+    <button (click)="completeAll()">Complete All</button>
   </div>
 
   <div class="show">
-    <button id="show1"> All </button>
-    <button> Completed </button>
-    <button> Active </button>
+    <button
+      [ngClass]="{'selected': isAllSelected}"
+      (click)="
+        isAllSelected = true;
+        isCompletedSelected = false;
+        isActiveSelected = false;
+        filter('all')"> All
+    </button>
+    <button
+      [ngClass]="{'selected': isCompletedSelected}"
+      (click)="
+        isCompletedSelected = true ;
+        isAllSelected = false;
+        isActiveSelected = false;
+        filter('Completed')"> Completed
+    </button>
+    <button
+      [ngClass]="{'selected': isActiveSelected}"
+      (click)="
+        isActiveSelected = true;
+        isAllSelected = false;
+        isCompletedSelected = false;
+        filter('Active')"> Active
+    </button>
   </div>
 
-  <button class="clear-all"> Clear Completed </button>
+  <button
+    class="clear-all"
+    (click)="clearCompleted()"> Clear Completed
+  </button>
 </div>
 
 
