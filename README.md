@@ -27,7 +27,7 @@ The Angular Todo List App is a simple yet powerful task management application d
 - __Local Storage:__ The app leverages the browser's local storage to persist the tasks, ensuring that users can access their task list even after closing and reopening the app.
 ## Usage
 
-- Upon launching the app, you will be presented with an empty input field with a placeholder _"what should be don?"_.
+- Upon launching the app, you will be presented with an empty input field with a placeholder _"what should be done?"_.
 - To add a new task, enter the task description in the input field and press ENTER. The task will be added to the list and the footer will be displayed allowing you to control the list more effectively.
 - To mark a task as completed, check the checkbox beside the task. The task will be visually updated to indicate completion.
 - To remove a task from the list, click the delete button _' represented by an "X" icon'_ beside the task. The task will be permanently removed from the list
