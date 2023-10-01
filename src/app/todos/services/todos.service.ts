@@ -12,7 +12,14 @@ export class TodosService {
 
   filter = new BehaviorSubject<FilterEnum>(FilterEnum.All);
 
-  constructor() { }
+  taskJson : (string | null) = "";
+
+  constructor() {
+    this.taskJson = localStorage.getItem('tasks');
+    if (this.taskJson) {
+      this.tasks.next(JSON.parse(this.taskJson));
+    }
+   }
 
   addTask(text: string) {
     const task: Task = {
@@ -22,6 +29,7 @@ export class TodosService {
     };
     const currentTasks = this.tasks.getValue();
     this.tasks.next([...currentTasks, task]);
+    localStorage.setItem('tasks', JSON.stringify([...currentTasks, task]));
   }
 
   changeStatus(id: string) {
@@ -29,6 +37,7 @@ export class TodosService {
     const taskIndex = currentTasks.findIndex(task => task.id === id);
     currentTasks[taskIndex].status = !currentTasks[taskIndex].status;
     this.tasks.next([...currentTasks]);
+    localStorage.setItem('tasks', JSON.stringify([...currentTasks]));
   }
 
   changeText(id: string, text: string) {
@@ -36,14 +45,14 @@ export class TodosService {
     const taskIndex = currentTasks.findIndex(task => task.id === id);
     currentTasks[taskIndex].text = text;
     this.tasks.next([...currentTasks]);
-    console.log(this.tasks.getValue());
-
+    localStorage.setItem('tasks', JSON.stringify([...currentTasks]));
   }
 
   deleteTask(id: string) {
     const currentTasks = this.tasks.getValue();
     const updatedTasks = currentTasks.filter(task => task.id !== id);
     this.tasks.next(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   }
 
 
@@ -60,6 +69,7 @@ export class TodosService {
     const currentTasks = this.tasks.getValue();
     const updatedTasks = currentTasks.filter(task => task.status !== true);
     this.tasks.next(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   }
 
   completeAll(){
@@ -68,6 +78,7 @@ export class TodosService {
       task.status = true;
     });
     this.tasks.next(currentTasks);
+    localStorage.setItem('tasks', JSON.stringify(currentTasks));
   }
 
 }
