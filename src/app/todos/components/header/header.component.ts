@@ -14,6 +14,9 @@ export class HeaderComponent {
   constructor(private _todosService : TodosService) { }
 
   addTask() {
+    if (this.newTask.trim() === '') {
+      return;
+    }
     this._todosService.addTask(this.newTask);
     this.newTask = '';
   }
